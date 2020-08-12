@@ -1,0 +1,239 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    width: 100vw;
+    background-color: rgba(51, 51, 51, 0.356);
+    overflow: auto;
+  }
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: rgb(105, 6, 6);
+color: white;
+}
+
+/* Style the body */
+body {
+    /*background-color:rgba(134, 65, 65, 0.322);*/
+    /*background-color: rgba(25, 168, 12, 0.425);*/
+    /*background: linear-gradient(-45deg,#5fa2d8,rgb(4, 62, 185),rgb(25, 146, 66));*/
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(-40deg,#3a5875,rgb(20, 24, 32));
+}
+
+.navbar {
+    width: 100vw;
+    background-color: rgba(51, 51, 51, 0.356);
+    overflow: auto;
+}
+
+form{
+    margin-top:50px;
+    transition:all 4s ease-in-out;
+}
+
+
+.boxForm{
+    margin-top: 8%;
+    margin-bottom: 5%;
+    margin-left: 32%;
+    margin-right: 32%;
+    border-radius: 20px;
+    padding: 2%;
+    background-color: rgba(51, 51, 51, 0.356);
+    overflow: auto;
+    text-align: center;
+}
+
+.boxForm h1{
+    color: white;
+    text-align: center;
+}
+
+.boxForm p{
+    color: white;
+    text-align: center;
+}
+
+.inputForm{
+    margin-top: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;    
+    width: 70%;
+    overflow: hidden;
+    color: white;
+    
+}
+
+.subBtn{
+    margin-top: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn{
+    border-radius: 10px;
+    border-style: none;
+    border-color: black;
+    height: 30px;
+}
+
+.bar div{
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    bottom: 20%;
+    background: rgba(255,255,255,0.2);
+}
+
+.bar div:nth-child(1){
+    left:15%;
+    position: absolute;
+    animation-delay:1s;
+    animation: gohigh 5s linear infinate ;
+}
+
+.bar div:nth-child(2){
+    position: absolute;
+    left:20%;
+    animation-delay:1s;
+    animation: gohigh 5s linear infinate ;
+}
+
+.bar div:nth-child(3){
+    position: absolute;
+    left:25%;
+    animation-delay:1s;
+    animation: gohigh 5s linear infinate ;
+}
+
+
+.divBar {
+    background-color: #777;
+    color: white;
+    padding: 18px;
+    width: 90%;
+    
+    display: inline-block;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    overflow: auto;
+
+  }
+  .active, .divBar:hover {
+    background-color: #555;
+  }
+
+  li {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 1em;
+    background: dodgerblue;
+    margin: 0 1em;
+    display: inline-block;
+    color: white;
+    position: relative;
+  }
+  
+  li::before{
+    content: '';
+    position: absolute;
+    top: .9em;
+    left: -4em;
+    width: 4em;
+    height: .2em;
+    background: dodgerblue;
+    z-index: -1;
+  }
+  
+  
+  li:first-child::before {
+    display: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {background-color:dodgerblue;}
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+input{
+  margin-top: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  outline: none;    
+  width: 84%;
+  overflow: hidden;
+  color: white;
+}
+.form-control{
+  border-radius:20px;
+}
+button{
+  border-radius: 12px;
+}
+@keyframes gohigh{
+    from {transform: translateY(0)}
+    to {transform: translateY(100px)}
+}
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader*/
+/* .loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; 
+  animation: spin 2s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
