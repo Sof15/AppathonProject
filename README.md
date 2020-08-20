@@ -28,6 +28,9 @@
 (για την πρόσβαση στις πτήσεις που αναχωρούν από το αεροδρόμιο)
  
 ## :gear: Εγκατάσταση των dependencies και εκκίνηση της εφαρμογής:
+
+Εγκατάσταση του npm με:  
+```sudo apt-get install npm```
  
 - στο directory Appathon/server
   - ```npm install``` 
