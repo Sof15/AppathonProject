@@ -1,6 +1,47 @@
-# AppathonProject
-Project for the course of Internet and Applications 
+# Project for the course of Internet and Applications 2019-2020
+
+## :round_pushpin: Περιγραφή  
 
 Από service με τα δρομολόγια αναχωρήσεων αεροπλάνων, επιστρέφω πόση ώρα πριν πρέπει να ξεκινήσω για να φτάσω στο αεροδρόμιο, από την αφετηρία κάθε λεωφορειακής γραμμής που περνάει από την στάση του αεροδρομίου. Δίνω από ένα απλό form πόση ώρα πριν την ώρα αναχώρησης του αεροπλάνου θέλω να είμαι στο αεροδρόμιο.  
 
-Θα χρησιμοποιηθούν: Node.js, Express.js 
+Σημείωση:  
+
+Για καλύτερη οπτικοποίηση των αποτελεσμάτων δόθηκε η δυνατότητα στο χρήστη να μπορεί να επιλέξει πόσες ενδιάμεσες στάσεις θέλει να έχουν τα δυνατά μονοπάτια που καταλήγουν στη στάση του αεροδρομίου.  
+
+## :toolbox: Υλοποίηση  
+
+Υλοποιήθηκε με: 
+- Node.js για το backend,
+- Express.js για την επικοινωνία frontend/backend
+- vue.js για το frontend
+ 
+## :link:	3rd party web-services  
+
+Χρησιμοποιήθηκαν API από:  
+- i-travel 
+(για την έυρεση μονοπατιών και της συνολικής διάρκειας αυτών)
+- openWeatherMap  
+(για την εκτίμηση του χρόνου αναμονής ανάλογα σε ποια κατηγορία ανήκουν οι καιρικές συνθήκες)
+
+Έγινε εξαγωγή πληροφορίας από:
+- https://www.skg-airport.gr/en/flights--more/flights--destinations#arrivals--departures
+(για την πρόσβαση στις πτήσεις που αναχωρούν από το αεροδρόμιο)
+ 
+## :gear: Εγκατάσταση των dependencies και εκκίνηση της εφαρμογής:
+ 
+- στο directory Appathon/server
+  - ```npm install``` 
+  (εγκατάσταση dependencies)
+  - ```node index.js``` 
+  (εκκίνηση)
+  
+- στο directory Appathon/client: 
+  - ```npm install```
+  (εγκατάσταση dependencies)
+  - ```npm run dev```
+  (εκκίνηση)
+  
+## :woman_mechanic: Author 
+Σοφία Γαλανάκη  
+  
+Α.Μ. 03115060
