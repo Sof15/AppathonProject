@@ -1,37 +1,4 @@
-/* Add a black background color to the top navigation */
-.topnav {
-    width: 100vw;
-    background-color: rgba(51, 51, 51, 0.356);
-    overflow: auto;
-  }
-  
-/* Style the links inside the navigation bar */
-.topnav a {
-float: left;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-background-color: #ddd;
-color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-background-color: rgb(105, 6, 6);
-color: white;
-}
-
-/* Style the body */
 body {
-    /*background-color:rgba(134, 65, 65, 0.322);*/
-    /*background-color: rgba(25, 168, 12, 0.425);*/
-    /*background: linear-gradient(-45deg,#5fa2d8,rgb(4, 62, 185),rgb(25, 146, 66));*/
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -216,24 +183,3 @@ button{
     from {transform: translateY(0)}
     to {transform: translateY(100px)}
 }
-/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader*/
-/* .loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; 
-  animation: spin 2s linear infinite;
-}
-
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-} */

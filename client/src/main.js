@@ -21,22 +21,3 @@ new Vue({
   
 })
 
-
-new Vue({
-  el: "#search",
-  data: {
-    jobTitles: [
-      { name: "Product designer", id: 1 },
-      { name: "Full-stack developer", id: 2 },
-      { name: "Product manager", id: 3 },
-      { name: "Senior front-end developer", id: 4 }
-    ],
-    selectedJobTitle: null
-  },
-
-  methods: {
-      changeJobTitle (event) {
-      this.selectedJobTitle = event.target.options[event.target.options.selectedIndex].text
-    }
-  }
-})

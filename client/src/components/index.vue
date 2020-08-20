@@ -99,7 +99,7 @@ export default {
       let self = this;
       
       axios
-        .get("http://localhost:3000/duration/"+(parseInt(self.transits)+1).toString())
+        .get("http://localhost:3000/duration/"+(parseInt(self.transits)).toString())
         .then(
           response => (self.durations = response.data)
           )

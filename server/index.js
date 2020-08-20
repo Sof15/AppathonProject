@@ -2,12 +2,11 @@ const express = require('express');
 const axios = require('axios');
 const httprequest = require('xmlhttprequest').XMLHttpRequest;
 
-//const router = express.Router()
+
 const app = express();
 const port = 3000;
 const cors = require('cors');
 app.use(cors());
-const bodyParser = require('body-parser');
 
 const scrapSteam = require("./scrapeFlights");
 const weatherData = require('./weatherData');
@@ -16,9 +15,6 @@ app.get('/routes',async (req, res) => {
   res.send(await scrapSteam());
   return res;
 });  
-//app.use('/',router)
-app.use(bodyParser.json())
-
 
 //create dictionaries with key: destination_device_ids value: array of path ids
 //create dictionaries with key: path_ids value: array of origin_device_ids
@@ -63,6 +59,7 @@ async function getDuration() {
 }
 
 function calculateTime(destId, transits, sum ,parent) {
+  
   if (parent.includes(destId) && transits!=-1)
   {
     return [[],[[]]]
@@ -88,7 +85,6 @@ function calculateTime(destId, transits, sum ,parent) {
       questions.push(xmlHttp.responseText)
       //console.log('response:',xmlHttp.responseText,'status:', xmlHttp.status)//,'http://147.102.16.156:8080/services/getPathDuration/'+destDict[destId][i]);
     } */
-      //if (!(visited.includes(destId))){ visited.push(destId);}
       for (var i = 0; i< destDict[destId].length ; i++ ){
         if (!(destDict[destId][i] in pathDurDict)){ 
           questions.push('The id you entered matches no known path id. Please try again.')
@@ -96,7 +92,7 @@ function calculateTime(destId, transits, sum ,parent) {
           questions.push(pathDurDict[destDict[destId][i]])
         }
       }
-    
+      //console.log(questions)
       var parents = []
       var prevParent = destId
       for(var idx=0; idx<questions.length; idx++){
@@ -111,47 +107,32 @@ function calculateTime(destId, transits, sum ,parent) {
             }
             
             if (rec[1].length==0){continue}
-            //rec[1][0]=rec[1][0].reverse()
             for (var j=0; j<parents.length; j++){
-              
               if (rec[1][0].length==0){break}
-              if (parents[j].toString()==rec[1][0].toString()){break;}
-
-              
+              if (parents[j].toString()==rec[1][0].toString()){break;}              
             }
             
             if (j==parents.length && rec[1][0].length>0){
-              //console.log(rec[1])
-              
               durations = durations.concat(rec[0])
               parents = parents.concat(rec[1])
             }
         }
-      } 
-       
+      }  
     return [durations,parents]
   }
  
 }
 
-/* (async () => {
-  myDicts = await createDicts()
-  pathDict = myDicts[1]
-  destDict = myDicts[0]
-  pathDurDict = await getDuration()
-  //49 is the device id of airport
-  console.log( calculateTime('49', 3, 0,[],[]))
-})()
- */
 app.get('/duration/:transit',async (req, res) => {
   myDicts = await createDicts()
   pathDict = myDicts[1]
   destDict = myDicts[0]
   pathDurDict = await getDuration()
   
-
-  result = calculateTime('75',  req.params.transit, 0,[],[])
+  transits = parseInt(req.params.transit) +1
+  result = calculateTime('49', transits , 0,[],[])
   resultJSON=[]
+
   for (var j=0; j<result[0].length; j++){
     resultJSON.push({'duration': result[0][j], 'path':result[1][j]})
   }
@@ -166,12 +147,6 @@ app.get('/weather',async (req, res) => {
   return res
 });
 
- /* app.use((err, req, res, next) => {
-  res.locals.error = err;
-  const status = err.status || 500;
-  res.status(status);
-  res.render('error');
-});  */
 
 const corsConfig = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
